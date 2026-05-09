@@ -1,0 +1,9 @@
+{
+	"name": "sp-ui-projects",
+	"version": "0.1.0",
+	"description": "Sovereign Pair projects Micro-Frontend",
+	"moduleType": "projects",
+	"routes": ["/"],
+	"entryPoint": "src/lib/init.ts",
+	"dependencies": ["sp-service-api"]
+}
