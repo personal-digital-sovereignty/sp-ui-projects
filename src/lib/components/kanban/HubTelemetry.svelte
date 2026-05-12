@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { projectState } from '$lib/projects.svelte';
+    import { projectState } from '@sp/ui-core/projects';
     import { FolderKanban, Clock, Activity, FileText } from 'lucide-svelte';
 
     let totalProjects = $derived(projectState.projects.length);

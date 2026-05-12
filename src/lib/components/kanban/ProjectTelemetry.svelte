@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { updateProjectAPI, type Project } from '$lib/projects.svelte';
+    import { updateProjectAPI, type Project } from '@sp/ui-core/projects';
     import { CheckCircle2, Clock, PlayCircle, CircleDashed, CalendarDays } from 'lucide-svelte';
 
     let { project }: { project: Project } = $props();

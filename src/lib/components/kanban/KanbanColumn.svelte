@@ -1,7 +1,7 @@
 <script lang="ts">
     import { Settings, Plus, Trash2, Edit2 } from 'lucide-svelte';
     import KanbanCard from './KanbanCard.svelte';
-    import { updateProjectTasks, createTask, updateProjectAPI, type Project } from '$lib/projects.svelte';
+    import { updateProjectTasks, createTask, updateProjectAPI, type Project } from '@sp/ui-core/projects';
     import { dndzone } from 'svelte-dnd-action';
     import { flip } from 'svelte/animate';
 

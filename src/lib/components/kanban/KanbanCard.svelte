@@ -1,6 +1,6 @@
 <script lang="ts">
     import { GripVertical, Calendar, CheckCircle, ArrowRight } from 'lucide-svelte';
-    import { updateTaskAPI, type Task } from '$lib/projects.svelte';
+    import { updateTaskAPI, type Task } from '@sp/ui-core/projects';
 
     let { task, colStatus }: { task: Task, colStatus: string } = $props();
     let isEditing = $state(false);

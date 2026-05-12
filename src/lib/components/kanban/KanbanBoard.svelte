@@ -1,7 +1,7 @@
 <script lang="ts">
     import { Plus } from 'lucide-svelte';
     import KanbanColumn from './KanbanColumn.svelte';
-    import { updateProjectAPI, type Project } from '$lib/projects.svelte';
+    import { updateProjectAPI, type Project } from '@sp/ui-core/projects';
 
     let { project }: { project: Project } = $props();
 

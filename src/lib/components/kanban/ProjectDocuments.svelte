@@ -1,10 +1,10 @@
 <script lang="ts">
-import { API_BASE_URL } from '$lib/env_config';
+import { API_BASE_URL } from '@sp/ui-core/config';
 
     import { onMount } from 'svelte';
     import { FileText, Link2, X, AlertCircle } from 'lucide-svelte';
-    import { fetchProjectDocuments, linkProjectDocument, unlinkProjectDocument, type Project } from '$lib/projects.svelte';
-    import { globalState } from '$lib/state.svelte';
+    import { fetchProjectDocuments, linkProjectDocument, unlinkProjectDocument, type Project } from '@sp/ui-core/projects';
+    import { globalState } from '@sp/ui-core/state';
 
     let { project }: { project: Project } = $props();
 

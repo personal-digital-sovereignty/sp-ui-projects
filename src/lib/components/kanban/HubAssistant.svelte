@@ -1,7 +1,7 @@
 <script lang="ts">
-import { API_BASE_URL } from '$lib/env_config';
+import { API_BASE_URL } from '@sp/ui-core/config';
 
-    import { projectState } from '$lib/projects.svelte';
+    import { projectState } from '@sp/ui-core/projects';
     import { MessageSquare, Send, X, ThumbsUp, ThumbsDown, Copy, RotateCcw, Paperclip, Loader2 } from 'lucide-svelte';
     import { marked } from 'marked';
     import DOMPurify from 'dompurify';

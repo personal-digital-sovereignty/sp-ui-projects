@@ -1,8 +1,8 @@
 <script lang="ts">
     import { onMount, onDestroy } from 'svelte';
-    import { globalState } from '$lib/state.svelte';
+    import { globalState } from '@sp/ui-core/state';
     import { Plus, ArrowLeft, Archive, FolderKanban, BarChart2, Edit2, Search, X } from 'lucide-svelte';
-    import { projectState, fetchProjects, createProject, updateProjectAPI } from '$lib/projects.svelte';
+    import { projectState, fetchProjects, createProject, updateProjectAPI } from '@sp/ui-core/projects';
     import KanbanBoard from '$lib/components/kanban/KanbanBoard.svelte';
     import ProjectDocuments from '$lib/components/kanban/ProjectDocuments.svelte';
     import HubTelemetry from '$lib/components/kanban/HubTelemetry.svelte';
