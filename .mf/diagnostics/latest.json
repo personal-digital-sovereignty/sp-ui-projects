@@ -1,10 +1,10 @@
 {
   "latestErrorEvent": {
     "code": "TYPE-001",
-    "message": "Failed to generate type declaration. Execute the below cmd to reproduce and fix the error. #TYPE-001\nargs: {\"cmd\":\"npx tsc --project /home/jefersonlopes/Developer/local-repositories/sp-platform/sp-ui-projects/node_modules/.federation/tsconfig.e950dcd81e108d3cc0e2876337befba4.json\"}\nView the docs to see how to solve: https://module-federation.io/guide/troubleshooting/type#type-001",
+    "message": "Failed to generate type declaration. Execute the below cmd to reproduce and fix the error. #TYPE-001\nargs: {\"cmd\":\"npx tsc --project /home/jefersonlopes/Developer/local-repositories/sp-platform/sp-ui-projects/node_modules/.federation/tsconfig.601e0d2e6587683eca99cbbb55909afe.json\"}\nView the docs to see how to solve: https://module-federation.io/guide/troubleshooting/type#type-001",
     "args": {
-      "cmd": "npx tsc --project /home/jefersonlopes/Developer/local-repositories/sp-platform/sp-ui-projects/node_modules/.federation/tsconfig.e950dcd81e108d3cc0e2876337befba4.json"
+      "cmd": "npx tsc --project /home/jefersonlopes/Developer/local-repositories/sp-platform/sp-ui-projects/node_modules/.federation/tsconfig.601e0d2e6587683eca99cbbb55909afe.json"
     },
-    "timestamp": 1778552914211
+    "timestamp": 1778554288398
   }
 }
