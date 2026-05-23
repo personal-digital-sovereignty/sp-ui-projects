@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { logger } from '@sp/ui-core/logger';
+
 import { API_BASE_URL } from '@sp/ui-core/config';
 
     import { onMount } from 'svelte';
@@ -33,7 +35,7 @@ import { API_BASE_URL } from '@sp/ui-core/config';
                 availableFiles = paths;
             }
         } catch (e) {
-            console.error("Erro ao ler cofre", e);
+            logger.error("Erro ao ler cofre", e);
         }
     }
 
