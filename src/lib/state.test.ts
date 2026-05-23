@@ -1,5 +1,5 @@
 import { expect, test, describe } from 'vitest';
-import { globalState, toggleSidebar, setSidebarWidth } from './state.svelte';
+import { globalState, toggleSidebar, setSidebarWidth } from '@sp/ui-core';
 
 describe('Global OS Core State ($state Runes)', () => {
 	test('Should initialize with expanded sidebar and standard width', () => {

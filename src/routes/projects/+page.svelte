@@ -16,6 +16,7 @@
 		fetchProjects,
 		createProject,
 		updateProjectAPI,
+		type Project,
 	} from '@sp/ui-core/projects';
 	import KanbanBoard from '$lib/components/kanban/KanbanBoard.svelte';
 	import ProjectDocuments from '$lib/components/kanban/ProjectDocuments.svelte';
@@ -54,7 +55,7 @@
 		newProjectName = '';
 	}
 
-	async function toggleArchive(proj: import('$lib/projects.svelte').Project) {
+	async function toggleArchive(proj: Project) {
 		await updateProjectAPI(proj.id, { is_archived: !proj.is_archived });
 	}
 
@@ -331,7 +332,7 @@
 											if (e.key === 'Enter') activeProjectId = project.id;
 										}}
 										onclick={() => (activeProjectId = project.id)}
-										class="w-[320px] shrink-0 bg-white/80 dark:bg-[#0c1324]/80 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none hover:shadow-xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:-translate-y-1 transition-all cursor-pointer group flex flex-col h-48 text-left"
+										class="w-[320px] shrink-0 bg-white/80 dark:bg-[#0c1324]/80 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none hover:shadow-xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:-translate-y-1 transition-all cursor-pointer group flex flex-col min-h-[220px] justify-between text-left"
 									>
 										<div class="flex justify-between items-start mb-2 gap-4">
 											<h3
@@ -360,14 +361,28 @@
 										</div>
 
 										<p
-											class="text-xs text-slate-500 dark:text-slate-400 flex-1 line-clamp-3 leading-relaxed mt-1 font-medium"
+											class="text-xs text-slate-500 dark:text-slate-400 flex-1 line-clamp-2 leading-relaxed mt-1 font-medium"
 										>
 											{project.purpose ||
 												'Nenhum propósito definido ainda. Entre no Quadro para editar as propriedades.'}
 										</p>
 
+										<!-- Barra de Progresso / Esforço Real -->
+										<div class="mt-3 mb-2 w-full">
+											<div class="flex justify-between text-[10px] font-bold text-slate-400 dark:text-slate-500 mb-1">
+												<span class="uppercase tracking-wider">Esforço Realizado</span>
+												<span>{project.tasks.length ? Math.round((project.tasks.filter(t => t.status === 'Done' || t.status.toLowerCase().includes('concl')).length / project.tasks.length) * 100) : 0}%</span>
+											</div>
+											<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800/50 rounded-full overflow-hidden">
+												<div
+													class="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full transition-all duration-500"
+													style="width: {project.tasks.length ? Math.round((project.tasks.filter(t => t.status === 'Done' || t.status.toLowerCase().includes('concl')).length / project.tasks.length) * 100) : 0}%"
+												></div>
+											</div>
+										</div>
+
 										<div
-											class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-bold"
+											class="mt-2 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-bold"
 										>
 											<div
 												class="flex items-center gap-1.5 bg-slate-50 dark:bg-slate-800/60 px-2 py-1 rounded"
