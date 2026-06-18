@@ -15,25 +15,25 @@ export default defineConfig({
 			name: 'sp_ui_projects',
 			filename: 'remoteEntry.js',
 			exposes: {
-				'./ProjectsPage': './src/routes/projects/+page.svelte'
+				'./ProjectsPage': './src/routes/projects/+page.svelte',
 			},
-			shared: ['svelte']
-		})
+			shared: ['svelte'],
+		}),
 	],
 	server: {
 		port: 5176,
 		strictPort: true,
-		cors: true
+		cors: true,
 	},
 	preview: {
 		port: 5176,
 		strictPort: true,
-		cors: true
+		cors: true,
 	},
 	build: {
-		target: 'esnext'
+		target: 'esnext',
 	},
 	define: {
-		__APP_VERSION__: JSON.stringify(pkg.version)
-	}
+		__APP_VERSION__: JSON.stringify(pkg.version),
+	},
 });
